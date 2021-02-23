@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is CustomerListViewController {
+        if segue.destination is CustomerListTableViewController {
             let barButton = UIBarButtonItem()
             barButton.title = ""
             navigationItem.backBarButtonItem = barButton
