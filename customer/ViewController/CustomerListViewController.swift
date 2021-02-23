@@ -11,7 +11,8 @@ class CustomerListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(CustomerListModel.token)
+        print(CustomerListModel.customers)
     }
 
 }
