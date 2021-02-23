@@ -7,4 +7,5 @@ target 'customer' do
 
   # Pods for customer
   pod 'Alamofire', '~> 5.2'
+  pod 'SVProgressHUD'
 end

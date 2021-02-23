@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
@@ -18,6 +19,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginViewModel.loginViewModelDelegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.usernameTextField.text? = ""
+        self.passwordTextField.text? = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,6 +42,7 @@ class LoginViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
 
         } else {
+            SVProgressHUD.show()
             loginViewModel.login(username: usernameTextField.text!, password: passwordTextField.text!)
         }
     }
@@ -44,6 +51,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewModelDelegate {
     func loginStatus(isSuccess: Bool) {
+        SVProgressHUD.dismiss()
         if isSuccess {
             performSegue(withIdentifier: "CustomerListViewController", sender: nil)
         } else {
