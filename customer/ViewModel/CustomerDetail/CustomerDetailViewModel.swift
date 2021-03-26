@@ -31,7 +31,6 @@ class CustomerDetailViewModel {
     }
     
     func getCustomerDetailHandler(response: AFDataResponse<Any>) {
-        print(response)
         switch response.result {
         case .success(let value):
             let decoder = JSONDecoder()

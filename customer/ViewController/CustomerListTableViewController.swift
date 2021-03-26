@@ -19,6 +19,7 @@ class CustomerListTableViewController: UIViewController {
         customerDetailViewModel.customerDetailViewModelDelegate = self
         customerTableView.delegate = self
         customerTableView.dataSource = self
+        customerTableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
